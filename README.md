@@ -1,1 +1,1 @@
-### Foodlog Web App Developed with Ruby on Rails & Bulma
+### Foodlog Web App Developed using Ruby on Rails & Bulma
