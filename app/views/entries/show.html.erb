@@ -1,8 +1,40 @@
-<%= render @entry %>
+<% content_for :title do %>
+  <%= @entry.meal_type %> &ndash; <%= datetime = DateTime.now ; datetime.to_formatted_s(:nice_date) %>
+<% end %>
 
-<div>
-  <%= link_to "Edit this entry", edit_entry_path(@entry) %> |
-  <%= link_to "Back to entries", entries_path %>
+<div class="columns mt-6 is-centered">
+  <div class="column is-one-third">
+    <nav class="panel is-link">
+      <p class="panel-heading">
+        <%= @entry.meal_type %>:
+      </p>
 
-  <%= button_to "Destroy this entry", @entry, method: :delete %>
+      <div class="panel-block">
+        Calories: <%= @entry.calories %>
+      </div>
+
+      <div class="panel-block">
+        Proteins: <%= @entry.proteins %>
+      </div>
+
+      <div class="panel-block">
+        Carbohydrates: <%= @entry.carbohydrates %>
+      </div>
+
+      <div class="panel-block">
+        Fats: <%= @entry.fats %>
+      </div>
+    </nav>
+
+    <div class="columns is-mobile is-centered mt-2">
+      <div class="columns ">
+        <div class="mr-1">
+          <%= link_to "Edit this entry", edit_entry_path(@entry), class: "button is-gray" %>
+        </div>
+        <div class="ml-1">
+          <%= button_to "Destroy this entry", @entry, method: :delete, data: { confirm: "Are you sure?" }, class: "button is-gray" %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
