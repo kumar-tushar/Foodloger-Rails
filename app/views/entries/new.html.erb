@@ -1,9 +1,7 @@
-<h1>New entry</h1>
-
-<%= render "form", entry: @entry %>
-
-<br>
-
-<div>
-  <%= link_to "Back to entries", entries_path %>
+<div class="columns is-centered mt-6">
+  <div class="column is-one-third">
+    <h1 class="is-size-2 has-text-weight-bold mb-3">New entry</h1>
+    <%= render "form", entry: @entry %>
+  </div>
 </div>
+
